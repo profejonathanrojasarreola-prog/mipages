@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de compra</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <nav>
+        <h1>Cafetería Delisius</h1>
+
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="Contacto.html">Contáctanos</a>
+    </nav>
+
+    <section>
+
+        <h2>Solicitud de compra</h2>
+
+        <form action="https://formspree.io/f/xaenpkrd" method="POST">
+
+            <label>Producto:</label>
+            <input type="text" id="producto" name="producto" readonly>
+
+            <br><br>
+
+            <label>Nombre:</label>
+            <input type="text" name="nombre" required>
+
+            <br><br>
+
+            <label>Correo:</label>
+            <input type="email" name="correo" required>
+
+            <br><br>
+
+            <label>Teléfono:</label>
+            <input type="tel" name="telefono" required>
+
+            <br><br>
+
+            <button type="submit">Enviar solicitud</button>
+
+        </form>
+
+    </section>
+
+<script> const parametros = new URLSearchParams(window.location.search); const producto = parametros.get("producto"); document.getElementById("producto").value = producto; </script>
+
+</body>
+
+</html>

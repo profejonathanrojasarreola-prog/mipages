@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+```
+<nav>
+    <h1>Cafetería Delisius</h1>
+
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="Contacto.html">Contáctanos</a>
+</nav>
+
+
+<section>
+
+    <h2>Datos de contacto</h2>
+
+    <!-- PRIMERO EL CLIENTE ESCRIBE SUS DATOS -->
+
+    <form id="pedidoForm"
+          action="https://formspree.io/f/TU_ID"
+          method="POST">
+
+        <label>Nombre:</label>
+        <input type="text"
+               id="nombre"
+               name="nombre"
+               required>
+
+        <label>Correo:</label>
+        <input type="email"
+               id="correo"
+               name="correo"
+               required>
+
+        <label>Teléfono:</label>
+        <input type="tel"
+               id="telefono"
+               name="telefono"
+               required>
+
+
+        <h2>Nuestros Cafés</h2>
+
+
+        <!-- PRODUCTOS -->
+
+        <div class="productos">
+
+            <div class="producto">
+
+                <h3>Americano</h3>
+
+                <img src="Img/amaricano.jpeg"
+                     alt="Café americano">
+
+                <p>$30 pesos</p>
+
+                <input type="number"
+                       id="cantidadAmericano"
+                       min="1"
+                       value="1">
+
+                <button type="button"
+                        onclick="agregarCarrito('Americano', 30, 'cantidadAmericano')">
+                    Agregar al carrito
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <h3>Capuchino</h3>
+
+                <img src="Img/capuchino.jpg"
+                     alt="Capuchino">
+
+                <p>$45 pesos</p>
+
+                <input type="number"
+                       id="cantidadCapuchino"
+                       min="1"
+                       value="1">
+
+                <button type="button"
+                        onclick="agregarCarrito('Capuchino', 45, 'cantidadCapuchino')">
+                    Agregar al carrito
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <h3>Latte</h3>
+
+                <img src="Img/latte.jpg"
+                     alt="Café latte">
+
+                <p>$40 pesos</p>
+
+                <input type="number"
+                       id="cantidadLatte"
+                       min="1"
+                       value="1">
+
+                <button type="button"
+                        onclick="agregarCarrito('Latte', 40, 'cantidadLatte')">
+                    Agregar al carrito
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <h3>Mocha</h3>
+
+                <img src="Img/mocha.jpg"
+                     alt="Café mocha">
+
+                <p>$50 pesos</p>
+
+                <input type="number"
+                       id="cantidadMocha"
+                       min="1"
+                       value="1">
+
+                <button type="button"
+                        onclick="agregarCarrito('Mocha', 50, 'cantidadMocha')">
+                    Agregar al carrito
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARRITO -->
+
+        <div class="carrito">
+
+            <h2>Carrito de compras</h2>
+
+            <div id="listaCarrito">
+                <p>No hay productos agregados.</p>
+            </div>
+
+            <h3>
+                Total: $<span id="total">0</span> pesos
+            </h3>
+
+        </div>
+
+
+        <!-- INFORMACIÓN QUE SE ENVIARÁ A FORMSPREE -->
+
+        <input type="hidden"
+               id="pedido"
+               name="pedido">
+
+        <input type="hidden"
+               id="totalPedido"
+               name="total">
+
+
+        <button type="submit">
+            Enviar pedido
+        </button>
+
+    </form>
+
+</section>
+
+
+<script src="carrito.js"></script>
+```
+
+</body>
+
+</html>
